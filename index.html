@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMate - Discover Movies & TV Shows</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Hidden Radio Buttons for CSS-Only Navigation -->
+    <input type="radio" name="tabs" id="tab-home" checked style="display: none;">
+    <input type="radio" name="tabs" id="tab-movies" style="display: none;">
+    <input type="radio" name="tabs" id="tab-tv" style="display: none;">
+    <input type="radio" name="tabs" id="tab-favourites" style="display: none;">
+
+    <!-- Top Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <label for="tab-home" class="logo">
+                <div class="logo-icon-wrapper">
+                    <span class="logo-icon">🎬</span>
+                </div>
+                <span class="logo-text-cine">Cine</span>
+                <span class="logo-text-mate">Mate</span>
+            </label>
+            
+            <!-- Main Nav Links (CSS-Only Routing via labels) -->
+            <div class="nav-links">
+                <label for="tab-home" class="nav-link">Home</label>
+                <label for="tab-movies" class="nav-link">Movies</label>
+                <label for="tab-tv" class="nav-link">TV Shows</label>
+                <label for="tab-favourites" class="nav-link">Favourites</label>
+            </div>
+
+            <!-- Small Search -->
+            <div class="nav-search">
+                <svg class="nav-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="text" placeholder="Search..." class="nav-search-input">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container main-content">
+        
+        <!-- ========================================== -->
+        <!-- VIEW: HOME                                 -->
+        <!-- ========================================== -->
+        <div id="home-view" class="page-view">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">
+                    Discover <span class="text-accent">great</span> movies & shows
+                </h1>
+                <p class="hero-subtitle">
+                    Browse thousands of titles, save your favourites, and never run out of things to watch.
+                </p>
+
+                <!-- Stats -->
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">MOVIES</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">TV SHOWS</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">GENRES</div>
+                    </div>
+                </div>
+
+                <!-- Big Search Bar -->
+                <div class="big-search-card">
+                    <div class="big-search-input-wrap">
+                        <svg class="big-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <input type="text" placeholder="Search for a movie or TV show..." class="big-search-input">
+                    </div>
+                    
+                    <div class="big-search-controls">
+                        <select class="filter-select">
+                            <option>All Genres</option>
+                            <option>Action</option>
+                            <option>Comedy</option>
+                            <option>Drama</option>
+                            <option>Horror</option>
+                            <option>Sci-Fi</option>
+                            <option>Thriller</option>
+                            <option>Animation</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>All Years</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                        </select>
+                        <button class="btn-search">Search</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Section -->
+            <section class="featured-wrapper">
+                <h2 class="section-heading">
+                    <span class="text-accent">⭐</span> Featured This Week
+                </h2>
+                <div class="featured-card">
+                    <div class="featured-img-placeholder">
+                        <span>🎬</span>
+                    </div>
+                    <div class="featured-info">
+                        <div class="featured-badge">
+                            <span>🔥</span> EDITOR'S PICK
+                        </div>
+                        <h3 class="featured-title">Interstellar</h3>
+                        <p class="featured-desc">
+                            A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival. A breathtaking journey through time and love.
+                        </p>
+                        <div class="featured-buttons">
+                            <button class="btn-primary">
+                                <span>▶</span> View Details
+                            </button>
+                            <button class="btn-secondary">
+                                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                                Favourite
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section class="categories-scroll">
+                <button class="category-pill active"><span>🎬</span> All</button>
+                <button class="category-pill"><span>💥</span> Action</button>
+                <button class="category-pill"><span>😂</span> Comedy</button>
+                <button class="category-pill"><span>🎭</span> Drama</button>
+                <button class="category-pill"><span>👻</span> Horror</button>
+                <button class="category-pill"><span>🚀</span> Sci-Fi</button>
+                <button class="category-pill"><span>🔪</span> Thriller</button>
+                <button class="category-pill"><span>🧸</span> Animation</button>
+            </section>
+
+            <!-- Trending Section -->
+            <section>
+                <div class="trending-header">
+                    <h2 class="section-heading" style="margin-bottom: 0;">
+                        <span style="color: var(--app-accent);">🔥</span> Trending Now
+                    </h2>
+                    <a href="#" class="view-all-link">View all <span>→</span></a>
+                </div>
+
+                <div class="movies-grid">
+                    <!-- Home Cards (Reusing existing ones) -->
+                    <div class="movie-card">
+                        <div class="card-poster">
+                            <span class="card-tag tag-trending">TRENDING</span>
+                            <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                            <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                        </div>
+                        <div class="card-details">
+                            <h3 class="card-title">Dune: Part Two</h3>
+                            <div class="card-meta"><span>2024</span><span>Sci-Fi</span></div>
+                            <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.5</div>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="card-poster">
+                            <span class="card-tag tag-new">NEW</span>
+                            <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                            <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                        </div>
+                        <div class="card-details">
+                            <h3 class="card-title">Oppenheimer</h3>
+                            <div class="card-meta"><span>2023</span><span>Drama</span></div>
+                            <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.9</div>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="card-poster">
+                            <span class="card-tag tag-top">TOP</span>
+                            <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                            <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                        </div>
+                        <div class="card-details">
+                            <h3 class="card-title">The Dark Knight</h3>
+                            <div class="card-meta"><span>2008</span><span>Action</span></div>
+                            <div class="card-rating rating-high"><span class="rating-star">⭐</span> 9.0</div>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="card-poster">
+                            <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                            <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                        </div>
+                        <div class="card-details">
+                            <h3 class="card-title">Parasite</h3>
+                            <div class="card-meta"><span>2019</span><span>Thriller</span></div>
+                            <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.5</div>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="card-poster">
+                            <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                            <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                        </div>
+                        <div class="card-details">
+                            <h3 class="card-title">Inception</h3>
+                            <div class="card-meta"><span>2010</span><span>Sci-Fi</span></div>
+                            <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.8</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- VIEW: MOVIES                               -->
+        <!-- ========================================== -->
+        <div id="movies-view" class="page-view">
+            <div class="page-header">
+                <h1 class="page-title">Explore <span class="text-accent">Movies</span></h1>
+                <p class="page-subtitle">Find your next cinematic adventure from our vast collection.</p>
+            </div>
+            
+            <!-- Quick Filters for Movies Page -->
+            <section class="categories-scroll" style="margin-bottom: 2rem;">
+                <button class="category-pill active">All Movies</button>
+                <button class="category-pill">Now Playing</button>
+                <button class="category-pill">Popular</button>
+                <button class="category-pill">Top Rated</button>
+                <button class="category-pill">Upcoming</button>
+            </section>
+
+            <div class="movies-grid">
+                <!-- Movie Cards -->
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">The Matrix</h3>
+                        <div class="card-meta"><span>1999</span><span>Sci-Fi</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.7</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">Gladiator</h3>
+                        <div class="card-meta"><span>2000</span><span>Action</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.5</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <span class="card-tag tag-new">NEW</span>
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">Inside Out 2</h3>
+                        <div class="card-meta"><span>2024</span><span>Animation</span></div>
+                        <div class="card-rating rating-avg"><span class="rating-star">⭐</span> 7.6</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">Get Out</h3>
+                        <div class="card-meta"><span>2017</span><span>Horror</span></div>
+                        <div class="card-rating rating-avg"><span class="rating-star">⭐</span> 7.7</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">La La Land</h3>
+                        <div class="card-meta"><span>2016</span><span>Romance</span></div>
+                        <div class="card-rating rating-avg"><span class="rating-star">⭐</span> 8.0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn-secondary" style="margin: 0 auto;">Load More Movies</button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- VIEW: TV SHOWS                             -->
+        <!-- ========================================== -->
+        <div id="tv-view" class="page-view">
+            <div class="page-header">
+                <h1 class="page-title">Explore <span class="text-accent">TV Shows</span></h1>
+                <p class="page-subtitle">Binge-worthy series, from thrilling dramas to lighthearted comedies.</p>
+            </div>
+            
+            <!-- Quick Filters for TV Page -->
+            <section class="categories-scroll" style="margin-bottom: 2rem;">
+                <button class="category-pill active">All TV Shows</button>
+                <button class="category-pill">Airing Today</button>
+                <button class="category-pill">On TV</button>
+                <button class="category-pill">Popular</button>
+                <button class="category-pill">Top Rated</button>
+            </section>
+
+            <div class="movies-grid">
+                <!-- TV Show Cards -->
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <span class="card-tag tag-trending">TRENDING</span>
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">📺</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">Breaking Bad</h3>
+                        <div class="card-meta"><span>2008</span><span>Crime</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 9.5</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">📺</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">Stranger Things</h3>
+                        <div class="card-meta"><span>2016</span><span>Sci-Fi</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.7</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <span class="card-tag tag-top">TOP</span>
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">📺</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">Game of Thrones</h3>
+                        <div class="card-meta"><span>2011</span><span>Fantasy</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 9.2</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon"><svg style="width:1rem; height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">📺</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">The Office</h3>
+                        <div class="card-meta"><span>2005</span><span>Comedy</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.9</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn-secondary" style="margin: 0 auto;">Load More TV Shows</button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- VIEW: FAVOURITES                           -->
+        <!-- ========================================== -->
+        <div id="favourites-view" class="page-view">
+            <div class="page-header">
+                <h1 class="page-title">Your <span class="text-accent">Favourites</span></h1>
+                <p class="page-subtitle">All the movies and shows you've saved for later.</p>
+            </div>
+
+            <div class="movies-grid">
+                <!-- Favourite Cards (Note the active fav icon) -->
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon active"><svg style="width:1rem; height:1rem;" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">Interstellar</h3>
+                        <div class="card-meta"><span>2014</span><span>Sci-Fi</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 8.6</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon active"><svg style="width:1rem; height:1rem;" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">📺</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">Breaking Bad</h3>
+                        <div class="card-meta"><span>2008</span><span>Crime</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 9.5</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="card-poster">
+                        <button class="card-fav-icon active"><svg style="width:1rem; height:1rem;" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+                        <span class="poster-icon">🎬</span><span class="poster-text">No Image</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">The Dark Knight</h3>
+                        <div class="card-meta"><span>2008</span><span>Action</span></div>
+                        <div class="card-rating rating-high"><span class="rating-star">⭐</span> 9.0</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <!-- Brand Col -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon-wrapper" style="width: 1.75rem; height: 1.75rem; margin-right: 0.5rem; border-radius: 0.375rem;">
+                            <span class="logo-icon" style="font-size: 1rem;">🎬</span>
+                        </div>
+                        <span class="logo-text-cine">Cine</span>
+                        <span class="logo-text-mate" style="margin-left: 0.25rem;">Mate</span>
+                    </div>
+                    <p class="footer-desc">
+                        A movie and TV show discovery app built as part of the Web Architectures course. JavaScript features coming week by week!
+                    </p>
+                </div>
+
+                <!-- Pages Col -->
+                <div>
+                    <h4 class="footer-heading">Pages</h4>
+                    <ul class="footer-links">
+                        <li><label for="tab-home" class="footer-link">Home</label></li>
+                        <li><label for="tab-movies" class="footer-link">Movies</label></li>
+                        <li><label for="tab-tv" class="footer-link">TV Shows</label></li>
+                        <li><label for="tab-favourites" class="footer-link">Favourites</label></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Col -->
+                <div>
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">GitHub Repo</a></li>
+                        <li><a href="#" class="footer-link">TMDB API</a></li>
+                        <li><a href="#" class="footer-link">MDN Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>© 2025 CineMate - Web Architectures Project</p>
+                <div class="footer-badge">
+                    <span>⭐ Ramuthu</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
